@@ -14,4 +14,7 @@ let usuarioDeTeste = {
 //UsuarioServices.cadastrar(usuarioDeTeste);
 
 
-UsuariosServices.detalhar(131);
+UsuariosServices.detalhar(2);
+
+// UsuariosServices.remover(4);
+

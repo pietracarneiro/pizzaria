@@ -38,22 +38,39 @@ function cadastrar(objeto){
 }
 
 function detalhar(idUsuario){
-    let mostrar = usuarios.filter(
-        u => {
-            if(u.id == idUsuario) {
-                return { 
-                Nome: u.nome,
-                "E-mail": u.email,
-                "Endereços": console.table(u.endereco),
-                "Formas de Pagamento": console.table(u.formasDePagamento)
-                }
-            }
-        });
+    // let mostrar = usuarios.filter(
+    //     u => {
+    //         if(u.id == idUsuario) {
+    //             console.log("\n" + "Nome:" + u.nome + "\n \n" + "E-mail:" + u.email + "\n")
+    //             console.log("Endereços" + "\n")
+    //             console.table(u.enderecos) 
+    //             console.log("Formas de Pagamento" + "\n")
+    //             console.table(u.formasDePagamento)
+    //             };
+    //         }
+    //     );
+
+    let usuario = usuarios.find(u => u.id == idUsuario);
+    console.log("\n" + "Nome:" + usuario.nome + "\n \n" + "E-mail:" + usuario.email + "\n");
+    console.log("Endereços" + "\n");
+    console.table(usuario.enderecos); 
+    console.log("Formas de Pagamento" + "\n");
+    console.table(usuario.formasDePagamento);
+    
 
 }
 
 function remover(idDoUsuarioParaRemover){
-    // Seu código aqui
+    let usuarioPosicao = usuarios.findIndex(u => u.id == idDoUsuarioParaRemover);
+    
+    // console.log(usuarioPosicao);
+   
+    let remove = usuarios.splice(usuarioPosicao, 1);
+
+    console.log(usuarios);
+
+    salvar(usuarios);
+
 }
 
 function alterar(novosDados, idUsuario){
