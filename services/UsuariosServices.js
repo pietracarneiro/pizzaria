@@ -3,7 +3,7 @@ const fs = require('fs');
 const bcrypt = require('bcrypt');
 
 function listar(){
-    console.table(usuarios.map(
+    let listandoUsuario = usuarios.map(
         u => {
             return {
                 id: u.id,
@@ -11,7 +11,9 @@ function listar(){
                 email: u.email
             }
         }
-    ));
+    );
+
+    console.table(listandoUsuario);
 }
 
 function salvar(arrayDeUsuarios){  
@@ -48,12 +50,8 @@ function detalhar(idUsuario){
 
 function remover(idDoUsuarioParaRemover){
     let usuarioPosicao = usuarios.findIndex(u => u.id == idDoUsuarioParaRemover); // gerando o index/posição a partir do id do usuário a ser removido
-    
-    // console.log(usuarioPosicao);
-   
+       
     let remove = usuarios.splice(usuarioPosicao, 1); // removendo o usuário da posição encontrada a partir do id passado como parâmetro
-
-    // console.log(usuarios);
 
     salvar(usuarios); // salvando e sobrescrevendo o array atualizando no arquivo de usuarios.json
 

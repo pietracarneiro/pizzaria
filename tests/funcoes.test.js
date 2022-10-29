@@ -1,6 +1,6 @@
 const UsuariosServices = require('../services/UsuariosServices');
 
-// UsuarioServices.listar();
+UsuariosServices.listar();
 
 let usuarioDeTeste = {
     nome:"Rafael Silva",
@@ -40,4 +40,4 @@ let novaFormaDePagamentoTeste = "1234 4567 8989 5456";
 
 let formaDePagamentoAlteradoTeste = "9876 6543 3210 0123";
 
-UsuariosServices.alterarFormaDePagamento(formaDePagamentoAlteradoTeste, 2, 2);
+// UsuariosServices.alterarFormaDePagamento(formaDePagamentoAlteradoTeste, 2, 2);
