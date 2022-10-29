@@ -83,14 +83,14 @@ function alterar(novosDados, idUsuario){
 function addEndereco(novoEndereco, idUsuario){
     let usuarioPosicao = usuarios.findIndex(u => u.id == idUsuario); // gerando o index/posição a partir do id do usuário a ser removido
     
-    let enderecoModificado = usuarios[usuarioPosicao].enderecos.push(novoEndereco);
+    let adicionandoEndereco = usuarios[usuarioPosicao].enderecos.push(novoEndereco);
     
     salvar(usuarios); // salvando e sobrescrevendo o array atualizando no arquivo de usuarios.json
     
 }
 
 function removerEndereco(posicaoDoEndereco, idUsuario){
-    let usuarioPosicao = usuarios.findIndex(u => u.id == idUsuario); // gerando o index/posição a partir do id do usuário a ser removido
+    let usuarioPosicao = usuarios.findIndex(u => u.id == idUsuario); // gerando o index/posição a partir do id do usuário a ter o endereço removido
     
     let remover = usuarios[usuarioPosicao].enderecos.splice(posicaoDoEndereco, 1); // removendo o usuário da posição encontrada a partir do id passado como parâmetro
     
@@ -101,7 +101,7 @@ function removerEndereco(posicaoDoEndereco, idUsuario){
 function alterarEndereco(posicaoDoEndereco, novoEndereco, idUsuario){
     let usuarioPosicao = usuarios.findIndex(u => u.id == idUsuario); // gerando o index/posição a partir do id do usuário a ter o endereço alterado
     
-    let enderecoPosicao = usuarios[usuarioPosicao].enderecos[posicaoDoEndereco]; // atribuindo a posição no array de endereço a uma variável
+    let enderecoPosicao = usuarios[usuarioPosicao].enderecos[posicaoDoEndereco]; // atribuindo a posição do array de endereço a uma variável
     
     if(enderecoPosicao !== -1) {
         usuarios[usuarioPosicao].enderecos[posicaoDoEndereco] = novoEndereco;
@@ -112,15 +112,31 @@ function alterarEndereco(posicaoDoEndereco, novoEndereco, idUsuario){
 }
 
 function addFormaDePagamento(novaFormaDePagamento, idUsuario){
-    // Seu código aqui
+    let usuarioPosicao = usuarios.findIndex(u => u.id == idUsuario); // gerando o index/posição a partir do id do usuário a ter uma nova forma de pagamento a ser adicionada
+    
+    let adicionandoFormaDePagamento = usuarios[usuarioPosicao].formasDePagamento.push(novaFormaDePagamento);
+
+    salvar(usuarios); // salvando e sobrescrevendo o array atualizando no arquivo de usuarios.json
 }
 
 function removerFormaDePagamento(posicaoDaFormaDePagamento, idUsuario){
-    // Seu código aqui
+    let usuarioPosicao = usuarios.findIndex(u => u.id == idUsuario); // gerando o index/posição a partir do id do usuário a ter forma de pagamento removido
+    
+    let remover = usuarios[usuarioPosicao].formasDePagamento.splice(posicaoDaFormaDePagamento, 1);
+
+    salvar(usuarios); // salvando e sobrescrevendo o array atualizando no arquivo de usuarios.json
 }
 
 function alterarFormaDePagamento(novaFormaDePagamento, posicaoDaFormaDePagamento, idUsuario){
-    // Seu código aqui
+    let usuarioPosicao = usuarios.findIndex(u => u.id == idUsuario); // gerando o index/posição a partir do id do usuário a ter a forma de pagamento a ser alterado
+    
+    let formaDePagamentoPosicao = usuarios[usuarioPosicao].formasDePagamento[posicaoDaFormaDePagamento]; // atribuindo a posição do array de forma de pagamentos a uma variável
+    
+    if(formaDePagamentoPosicao !== -1) {
+        usuarios[usuarioPosicao].formasDePagamento[posicaoDaFormaDePagamento] = novaFormaDePagamento;
+    }
+
+    salvar(usuarios); // salvando e sobrescrevendo o array atualizando no arquivo de usuarios.json
 }
 
 const UsuariosServices = {

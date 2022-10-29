@@ -30,4 +30,14 @@ let novoEnderecoTeste = "Rua Avaré, 55. SBC";
 
 let enderecoAlteradoTeste = "Rua do Raul, 91. SBC";
 
-UsuariosServices.alteraEndereco(0, enderecoAlteradoTeste, 123);
+// UsuariosServices.alteraEndereco(0, enderecoAlteradoTeste, 123);
+
+let novaFormaDePagamentoTeste = "1234 4567 8989 5456";
+
+// UsuariosServices.addFormaDePagamento(novaFormaDePagamentoTeste, 2);
+
+// UsuariosServices.removerFormaDePagamento(1, 2);
+
+let formaDePagamentoAlteradoTeste = "9876 6543 3210 0123";
+
+UsuariosServices.alterarFormaDePagamento(formaDePagamentoAlteradoTeste, 2, 2);
