@@ -47,32 +47,68 @@ function detalhar(idUsuario){
 }
 
 function remover(idDoUsuarioParaRemover){
-    let usuarioPosicao = usuarios.findIndex(u => u.id == idDoUsuarioParaRemover);
+    let usuarioPosicao = usuarios.findIndex(u => u.id == idDoUsuarioParaRemover); // gerando o index/posição a partir do id do usuário a ser removido
     
     // console.log(usuarioPosicao);
    
-    let remove = usuarios.splice(usuarioPosicao, 1);
+    let remove = usuarios.splice(usuarioPosicao, 1); // removendo o usuário da posição encontrada a partir do id passado como parâmetro
 
     // console.log(usuarios);
 
-    salvar(usuarios);
+    salvar(usuarios); // salvando e sobrescrevendo o array atualizando no arquivo de usuarios.json
 
 }
 
 function alterar(novosDados, idUsuario){
-    // Seu código aqui
+    let senhaCriptografada = bcrypt.hashSync(novosDados.senha, 10);
+    let usuarioPosicao = usuarios.findIndex(u => u.id == idUsuario);
+    
+    let novoUsuario = {
+        id: usuarios[usuarioPosicao].id,
+        nome: novosDados.nome,
+        email: novosDados.email,
+        senha: senhaCriptografada,
+        enderecos: usuarios[usuarioPosicao].enderecos,
+        formasDePagamento: usuarios[usuarioPosicao].formasDePagamento
+    }
+    
+    if(usuarioPosicao !== -1) {
+        usuarios[usuarioPosicao] = novoUsuario;
+    }    
+    
+    salvar(usuarios); // salvando e sobrescrevendo o array atualizando no arquivo de usuarios.json
+
 }
 
 function addEndereco(novoEndereco, idUsuario){
-    // Seu código aqui
+    let usuarioPosicao = usuarios.findIndex(u => u.id == idUsuario); // gerando o index/posição a partir do id do usuário a ser removido
+    
+    let enderecoModificado = usuarios[usuarioPosicao].enderecos.push(novoEndereco);
+    
+    salvar(usuarios); // salvando e sobrescrevendo o array atualizando no arquivo de usuarios.json
+    
 }
 
 function removerEndereco(posicaoDoEndereco, idUsuario){
-// Seu código aqui
+    let usuarioPosicao = usuarios.findIndex(u => u.id == idUsuario); // gerando o index/posição a partir do id do usuário a ser removido
+    
+    let remover = usuarios[usuarioPosicao].enderecos.splice(posicaoDoEndereco, 1); // removendo o usuário da posição encontrada a partir do id passado como parâmetro
+    
+    salvar(usuarios); // salvando e sobrescrevendo o array atualizando no arquivo de usuarios.json
+
 }
 
 function alterarEndereco(posicaoDoEndereco, novoEndereco, idUsuario){
-// Seu código aqui        
+    let usuarioPosicao = usuarios.findIndex(u => u.id == idUsuario); // gerando o index/posição a partir do id do usuário a ter o endereço alterado
+    
+    let enderecoPosicao = usuarios[usuarioPosicao].enderecos[posicaoDoEndereco]; // atribuindo a posição no array de endereço a uma variável
+    
+    if(enderecoPosicao !== -1) {
+        usuarios[usuarioPosicao].enderecos[posicaoDoEndereco] = novoEndereco;
+    }
+
+    salvar(usuarios); // salvando e sobrescrevendo o array atualizando no arquivo de usuarios.json
+
 }
 
 function addFormaDePagamento(novaFormaDePagamento, idUsuario){
