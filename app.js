@@ -8,7 +8,8 @@ const servidor = express();
 // Endereço, método (get post put patch delete), função callback (a ação que o servidor vai realizar quando a req chegar)
 servidor.get('/usuarios', (req, res)=>{
     console.log("chegou uma requisição!");
-    return res.send("Permaneça em linha... Sua ligação é muito importante!");
+    // return res.send("Permaneça em linha...");
+    return res.sendFile(__dirname + "/views/index.html");
 });
 
 // 4 - Por o servidor no modo "aguardando requisição"
