@@ -10,7 +10,7 @@ let usuarioDeTeste = {
     formasDePagamento: "1234 3434 2534 8736"
 }
 
-// UsuarioServices.cadastrar(usuarioDeTeste);
+// UsuariosServices.cadastrar(usuarioDeTeste);
 // UsuariosServices.detalhar(2);
 // UsuariosServices.remover(4);
 

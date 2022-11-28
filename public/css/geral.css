@@ -1,0 +1,65 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+body {
+    background-color: gray;
+    font-family: 'Gill Sans', 'Gill Sans MT', 
+    Calibri, 'Trebuchet MS', sans-serif;
+}
+
+header {
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    height: 80px;
+}
+
+header input {
+    font-size: 1.5rem;
+    border-style: none;
+    padding: 10px;
+    width: 530px;
+}
+
+header a {
+    text-decoration: none;
+}
+
+header span {
+    color: #fff;
+    background-color: #ff5100;
+    border-radius: 50%;
+    padding: 3px 9px;
+}
+
+header button {
+    background-color: #ff5100;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.5rem;
+    height: 40px;
+}
+
+.btBuscar{
+    width: 300px;
+}
+
+#logo {
+    width: 64px;
+    height: 64px;
+}
+
+article > img {
+    width: 300px;
+    height: 300px;
+    border: 10px solid black;
+}
