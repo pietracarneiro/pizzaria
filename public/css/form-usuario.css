@@ -1,0 +1,25 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#form-usuario {
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 600px;
+    padding: 20px;
+}
+
+#form-usuario .campos {
+    display: flex;
+    flex-direction: column;
+}
+
+#form-usuario label {
+    margin-bottom: 15px;
+}
+
+#form-usuario input {
+    display: block;
+    width: 100%;
+}
