@@ -3,25 +3,41 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;   
 }
 
 html {
     height: 100%;
+    font-size: 16px;
 }
 
 body {
     background-color: gray;
-    font-family: 'Gill Sans', 'Gill Sans MT', 
-    Calibri, 'Trebuchet MS', sans-serif;
+}
+
+body::before{
+	content: "";
+	position: fixed;
+	top: 0;	left: 0;
+	width: 100%; height: 100%;
+	background-image: url(/img/bg.jpeg);
+	filter: brightness(0.3);
+	background-size: cover;
+	z-index: -1;
 }
 
 header {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0,0,0,0.5);
     display: flex;
     align-items: stretch;
     padding: 10px;
     height: 80px;
     gap: 5px;
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    top: 0;
+    left: 0;
 }
 
 header input {
@@ -38,7 +54,7 @@ header a {
 
 header span {
     color: #fff;
-    background-color: #ff5100;
+    background-color:#ff5100;
     border-radius: 50%;
     padding: 3px 9px;
 }
@@ -57,14 +73,18 @@ button:hover, .input-file-container:hover{
     background-color: black;
 }
 
-.btBuscar{
+.btBuscar {
     width: 300px;
     font-size: 1.5rem;
 }
 
 #logo {
-    width: 64px;
     height: 64px;
+    width: 64px;
+}
+
+.btBuscar {
+    width: 300px;
 }
 
 article > img {
@@ -77,4 +97,38 @@ article > img {
 
 input[type="file"] {
     display: none;
+}
+
+form input[type="text"],
+form input[type="password"],
+form input[type="email"],
+form input[type="number"]
+{
+    padding: 5px;
+    font-size: 1.2rem;
+}
+
+form input:invalid{
+    border: 3px solid crimson;
+}
+
+form input:valid{
+    border: 3px solid greenyellow;
+}
+
+form input:invalid + .error-msg{
+    display: block;
+}
+
+form .error-msg{
+    color: crimson;
+    font-size: 14px;
+    display: none;
+}
+
+
+@media screen and (max-width: 550px) {
+    .btBuscar {
+        display: none;
+    }
 }
