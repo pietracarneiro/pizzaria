@@ -5,6 +5,7 @@ const router = require('./router');
 
 // 2 - Criar o servidor ou aplicação -> basta executar a função express, a mesma retorna um servidor
 const servidor = express();
+servidor.set('view engine','ejs');
 
 // Define a pasta public como a pasta de arquivos estáticos
 servidor.use(express.static(path.join(__dirname, 'public')))

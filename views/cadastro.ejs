@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include("parts/head.ejs") %> 
+    <body>
+        <link rel="stylesheet" href="/css/cadastro.css">
+        <%- include("parts/header.ejs")%>
+
+        <main>
+            <form action="">
+                <div>
+                    <label for="nome">Nome:</label>
+                    <input 
+                        type="text" 
+                        name="nome" 
+                        id="nome" 
+                        required
+                        placeholder="Digite seu nome completo sem abreviação"/>
+                </div>
+                <div>
+                    <label for="email">E-mail:</label>
+                    <input type="email" name="email" id="email" required>
+                </div>
+                <div>
+                    <label for="cep">CEP:</label>
+                    <input
+                        type="text"
+                        name="cep"
+                        id="cep"
+                        pattern="^[0-9]{5}-[0-9]{3}$"
+                        required>
+                    <span class="error-msg">Preencha o CEP corretamente</span>
+                </div>
+                <div>
+                    <label for="cpf">CPF:</label>
+                    <input
+                        type="text"
+                        name="cpf"
+                        id="cpf"
+                        pattern="^[0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2}$"
+                        required>
+                    <span class="error-msg">Preencha o CPF corretamente</span>
+                </div>
+                <div class="controles">
+                    <button type="reset">Resetar</button>
+                    <button type="submit">Enviar</button>
+                </div>
+            </form>
+        </main>
+    </body>
+
+</html>
