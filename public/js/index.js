@@ -212,6 +212,7 @@ let pizzasCardapio = [
 
 // }
 
+// FUNÇÕES QUE MANIPULAM A DOM - - - - - - - -
 function showPizza(pizza) {
     let article = document.createElement("article");
 
@@ -257,7 +258,7 @@ function onCampoDeBuscaKeyup(){
  * @returns pizzasFiltradas: As pizzas que possuem o
  * trechoBuscado no seu nome
  */
-
+// FUNÇÕES AUXILIARES -------------------------
 function filtrarPizzas(pizzas, trechoBuscado){
     let pizzasFiltradas = pizzas.filter(
         pizza => pizza.nome.toUpperCase().includes(trechoBuscado.toUpperCase())
@@ -265,7 +266,7 @@ function filtrarPizzas(pizzas, trechoBuscado){
     return pizzasFiltradas;
 }    
 
-console.log(filtrarPizzas(pizzasCardapio, 'ca'));
+// console.log(filtrarPizzas(pizzasCardapio, 'ca'));
 
 
 // Associoando a execução de uma função a um evento

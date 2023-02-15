@@ -9,6 +9,7 @@ servidor.set('view engine','ejs');
 
 // Define a pasta public como a pasta de arquivos estáticos
 servidor.use(express.static(path.join(__dirname, 'public')))
+servidor.use(express.urlencoded({ extended: false }));
 
 // 3 - Definir rota neste servidor
 // Endereço, método (get post put patch delete), função callback (a ação que o servidor vai realizar quando a req chegar)
