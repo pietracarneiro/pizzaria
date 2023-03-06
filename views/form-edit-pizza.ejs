@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Área Administrativa - Pizzaria Fantástica</title>
+    <title>Área Administrativa - Edição Pizzaria Fantástica</title>
     <link rel="stylesheet" href="/css/geral.css" />
     <style>
         .nav-adm {
@@ -77,21 +77,21 @@
         </ul>
     </nav>
     <main>
-        <form action="/adm/pizzas/store" method="post" enctype="multipart/form-data">
+        <form action="/adm/pizzas/<%= pizza.id %>/update" method="post">
             <label>
                 Nome:
-                <input type="text" name="nome" id="nome" placeholder="Digite o nome da pizza" />
+                <input value="<%= pizza.nome %>" type="text" name="nome" id="nome" placeholder="Digite o nome da pizza" />
             </label>
 
             <label>
                 Ingredientes:
-                <input type="text" name="ingredientes" id="ingredientes"
+                <input value="<%= pizza.ingredientes %>"type="text" name="ingredientes" id="ingredientes"
                     placeholder="Ingredientes (separados por vírgula)" />
             </label>
 
             <label>
                 Preço:
-                <input type="number" name="preco" id="preco" step="0.01" placeholder="Digite o preço da pizza" />
+                <input value="<%= pizza.preco %>"type="number" name="preco" id="preco" step="0.01" placeholder="Digite o preço da pizza" />
             </label>
 
             <label>
